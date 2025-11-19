@@ -18,9 +18,14 @@ import {
 import { useAuth } from "@/hooks/use-auth";
 import { LogOut, User as UserIcon } from "lucide-react";
 import Link from "next/link";
+import { Skeleton } from "../ui/skeleton";
 
 export function UserNav() {
-  const { user, login, logout } = useAuth();
+  const { user, logout, isInitializing } = useAuth();
+
+  if (isInitializing) {
+    return <Skeleton className="h-10 w-24" />;
+  }
 
   if (!user) {
     return (
