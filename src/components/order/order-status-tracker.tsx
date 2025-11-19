@@ -22,7 +22,7 @@ const statusMap: Record<OrderStatus, { title: string; icon: React.ElementType; s
 
 export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerProps) {
   const [order, setOrder] = useState(initialOrder);
-  const [timeLeft, setTimeLeft] = useState(0);
+  const [timeLeft, setTimeLeft] = useState<number | null>(null);
 
   useEffect(() => {
     // Mocking real-time updates for order status
@@ -47,7 +47,7 @@ export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerP
       setTimeLeft(remaining);
     };
 
-    calculateTimeLeft();
+    calculateTimeLeft(); // Initial calculation
     const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
@@ -74,9 +74,9 @@ export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerP
             <p className="text-sm text-muted-foreground">Tiempo de preparación restante</p>
             <p className={cn(
                 "text-5xl font-bold font-mono tracking-tight",
-                timeLeft < 5 * 60 * 1000 && timeLeft > 0 ? "text-destructive" : "text-primary"
+                timeLeft !== null && timeLeft < 5 * 60 * 1000 && timeLeft > 0 ? "text-destructive" : "text-primary"
             )}>
-                {timeLeft > 0 ? formatTime(timeLeft) : '00:00'}
+                {timeLeft !== null ? formatTime(timeLeft) : '00:00'}
             </p>
         </div>
 
