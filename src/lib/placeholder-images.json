@@ -1,3 +1,64 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Hero image of coffee and pastries",
+      "imageUrl": "https://picsum.photos/seed/hero/1200/600"
+    },
+    {
+      "id": "espresso-americano",
+      "description": "Espresso Americano",
+      "imageUrl": "https://picsum.photos/seed/espresso-americano/400/400"
+    },
+    {
+      "id": "cappuccino-italiano",
+      "description": "Cappuccino Italiano",
+      "imageUrl": "https://picsum.photos/seed/cappuccino-italiano/400/400"
+    },
+    {
+      "id": "latte-vainilla",
+      "description": "Latte Vainilla",
+      "imageUrl": "https://picsum.photos/seed/latte-vainilla/400/400"
+    },
+    {
+      "id": "croissant-mantequilla",
+      "description": "Croissant de Mantequilla",
+      "imageUrl": "https://picsum.photos/seed/croissant-mantequilla/400/400"
+    },
+    {
+      "id": "tostada-aguacate",
+      "description": "Tostada de Aguacate",
+      "imageUrl": "https://picsum.photos/seed/tostada-aguacate/400/400"
+    },
+    {
+      "id": "frappe-caramelo",
+      "description": "Frappé de Caramelo",
+      "imageUrl": "https://picsum.photos/seed/frappe-caramelo/400/400"
+    },
+    {
+      "id": "te-helado-limon",
+      "description": "Té Helado de Limón",
+      "imageUrl": "https://picsum.photos/seed/te-helado-limon/400/400"
+    },
+    {
+      "id": "cheesecake-fresa",
+      "description": "Cheesecake de Fresa",
+      "imageUrl": "https://picsum.photos/seed/cheesecake-fresa/400/400"
+    },
+    {
+      "id": "muffin-chocolate",
+      "description": "Muffin de Chocolate",
+      "imageUrl": "https://picsum.photos/seed/muffin-chocolate/400/400"
+    },
+    {
+      "id": "sandwich-pavo",
+      "description": "Sandwich de Pavo",
+      "imageUrl": "https://picsum.photos/seed/sandwich-pavo/400/400"
+    },
+    {
+      "id": "papas-fritas-artesanales",
+      "description": "Papas Fritas Artesanales",
+      "imageUrl": "https://picsum.photos/seed/papas-fritas-artesanales/400/400"
+    }
+  ]
 }
