@@ -5,6 +5,7 @@ import { placeholderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
   const heroImage = placeholderImages.find(p => p.id === 'hero');
+  const plainCategories = categories.map(({ icon, ...rest }) => rest);
 
   return (
     <div className="flex flex-col">
@@ -31,7 +32,7 @@ export default function Home() {
       </section>
 
       <div className="container mx-auto px-4 py-8 md:py-12">
-        <MenuDisplay allProducts={products} categories={categories} />
+        <MenuDisplay allProducts={products} categories={plainCategories} />
       </div>
     </div>
   );

@@ -1,16 +1,29 @@
 "use client";
 
 import { useState, useMemo } from 'react';
-import type { Product, Category } from '@/lib/types';
+import type { Product } from '@/lib/types';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { ProductCard } from './product-card';
-import { Search } from 'lucide-react';
+import { Search, Coffee, Croissant, Pizza, Sandwich, GlassWater } from 'lucide-react';
+
+interface Category {
+  id: string;
+  name: string;
+}
 
 interface MenuDisplayProps {
   allProducts: Product[];
   categories: Category[];
 }
+
+const iconMap: { [key: string]: React.ComponentType<{ className?: string }> } = {
+  'bebidas-calientes': Coffee,
+  'desayunos': Croissant,
+  'bebidas-frias': GlassWater,
+  'postres': Pizza,
+  'snacks': Sandwich,
+};
 
 export default function MenuDisplay({ allProducts, categories }: MenuDisplayProps) {
   const [selectedCategory, setSelectedCategory] = useState('all');
@@ -43,14 +56,17 @@ export default function MenuDisplay({ allProducts, categories }: MenuDisplayProp
         >
           <TabsList>
             <TabsTrigger value="all">Todos</TabsTrigger>
-            {categories.map((category) => (
-              <TabsTrigger key={category.id} value={category.id}>
-                <div className="flex items-center gap-2">
-                  {category.icon && <category.icon className="h-4 w-4" />}
-                  {category.name}
-                </div>
-              </TabsTrigger>
-            ))}
+            {categories.map((category) => {
+              const Icon = iconMap[category.id];
+              return (
+                <TabsTrigger key={category.id} value={category.id}>
+                  <div className="flex items-center gap-2">
+                    {Icon && <Icon className="h-4 w-4" />}
+                    {category.name}
+                  </div>
+                </TabsTrigger>
+              );
+            })}
           </TabsList>
         </Tabs>
       </div>
