@@ -9,7 +9,7 @@ import { UserNav } from "@/components/layout/user-nav";
 export default function Header() {
   const navItems = [
     { href: "/", label: "Menú" },
-    { href: "/orders/GS-20231119-0001", label: "Mis Pedidos" },
+    { href: "/orders", label: "Mis Pedidos" },
     { href: "/admin/dashboard", label: "Admin" },
   ];
 
