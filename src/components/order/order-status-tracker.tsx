@@ -23,8 +23,15 @@ const statusMap: Record<OrderStatus, { title: string; icon: React.ElementType; s
 export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerProps) {
   const [order, setOrder] = useState(initialOrder);
   const [timeLeft, setTimeLeft] = useState<number | null>(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (!isClient) return;
+
     // Mocking real-time updates for order status
     const timeouts = [
       setTimeout(() => setOrder(prev => ({ ...prev, status: 'en_preparacion' })), 5000),
@@ -32,16 +39,18 @@ export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerP
     ];
 
     return () => timeouts.forEach(clearTimeout);
-  }, []);
+  }, [isClient]);
 
   useEffect(() => {
+     if (!isClient) return;
+     
     if (order.status === 'entregado' || order.status === 'listo' || !order.timestamps.recibido) {
       setTimeLeft(0);
       return;
     }
 
     const calculateTimeLeft = () => {
-      const now = Date.now();
+      const now = new Date().getTime();
       const endTime = order.timestamps.recibido! + (25 * 60 * 1000); // 25 minutes
       const remaining = Math.max(0, endTime - now);
       setTimeLeft(remaining);
@@ -51,7 +60,7 @@ export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerP
     const interval = setInterval(calculateTimeLeft, 1000);
 
     return () => clearInterval(interval);
-  }, [order.status, order.timestamps.recibido]);
+  }, [order.status, order.timestamps.recibido, isClient]);
   
 
   const formatTime = (ms: number) => {
@@ -76,7 +85,7 @@ export default function OrderStatusTracker({ initialOrder }: OrderStatusTrackerP
                 "text-5xl font-bold font-mono tracking-tight",
                 timeLeft !== null && timeLeft < 5 * 60 * 1000 && timeLeft > 0 ? "text-destructive" : "text-primary"
             )}>
-                {timeLeft !== null ? formatTime(timeLeft) : '00:00'}
+                {timeLeft !== null && isClient ? formatTime(timeLeft) : '00:00'}
             </p>
         </div>
 
