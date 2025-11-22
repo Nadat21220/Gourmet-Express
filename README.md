@@ -1,5 +1,5 @@
-# Firebase Studio
+#Gourmet Express Teem
+This is te first version of the softwera 'Gourmet Express' 
+thek's for help in thes knew project
 
-This is a NextJS starter in Firebase Studio.
-
-To get started, take a look at src/app/page.tsx.
+<3
