@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from 'next/image'; //Hola
 import { products, categories } from '@/lib/data';
 import MenuDisplay from '@/components/menu/menu-display';
 import { placeholderImages } from '@/lib/placeholder-images';
