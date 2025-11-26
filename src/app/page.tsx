@@ -31,7 +31,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="container mx-auto px-4 py-8 md:py-12">
+      <div id="menu" className="container mx-auto px-4 py-8 md:py-12">
         <MenuDisplay allProducts={products} categories={plainCategories} />
       </div>
     </div>
