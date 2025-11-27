@@ -1,4 +1,4 @@
-import type {Config} from 'tailwindcss';
+import type { Config } from 'tailwindcss';
 
 export default {
   darkMode: ['class'],
@@ -16,6 +16,12 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        subtle: '0 2px 8px 0 rgba(0, 0, 0, 0.1)',
+        medium: '0 6px 12px -2px rgba(0, 0, 0, 0.15), 0 4px 8px -3px rgba(0, 0, 0, 0.1)',
+        large: '0 12px 24px -6px rgba(0, 0, 0, 0.2), 0 8px 16px -8px rgba(0, 0, 0, 0.15)',
+        xl: '0 24px 48px -12px rgba(0, 0, 0, 0.25), 0 16px 32px -16px rgba(0, 0, 0, 0.2)',
+      },
       fontFamily: {
         body: ['"PT Sans"', 'sans-serif'],
         headline: ['"Playfair Display"', 'serif'],
