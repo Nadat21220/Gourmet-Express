@@ -2,63 +2,68 @@
   "placeholderImages": [
     {
       "id": "hero",
-      "description": "Hero image of coffee and pastries",
-      "imageUrl": "https://picsum.photos/seed/hero/1200/600"
+      "description": "Es momento de que te consientas y mejores tu día con un buen antojo",
+      "imageUrl": "/images/cafeteria.jpg"
     },
     {
       "id": "espresso-americano",
       "description": "Espresso Americano",
-      "imageUrl": "https://picsum.photos/seed/espresso-americano/400/400"
+      "imageUrl": "/images/cafe-espresso.jpg"
     },
     {
       "id": "cappuccino-italiano",
       "description": "Cappuccino Italiano",
-      "imageUrl": "https://picsum.photos/seed/cappuccino-italiano/400/400"
+      "imageUrl": "/images/capuccino-italiano.png"
     },
     {
       "id": "latte-vainilla",
       "description": "Latte Vainilla",
-      "imageUrl": "https://picsum.photos/seed/latte-vainilla/400/400"
+      "imageUrl": "/images/latte-vainilla.jpg"
     },
     {
       "id": "croissant-mantequilla",
       "description": "Croissant de Mantequilla",
-      "imageUrl": "https://picsum.photos/seed/croissant-mantequilla/400/400"
+      "imageUrl": "/images/croissant-mantequilla.jpg"
     },
     {
       "id": "tostada-aguacate",
       "description": "Tostada de Aguacate",
-      "imageUrl": "https://picsum.photos/seed/tostada-aguacate/400/400"
+      "imageUrl": "/images/tostada-aguacate.jpg"
     },
     {
       "id": "frappe-caramelo",
       "description": "Frappé de Caramelo",
-      "imageUrl": "https://picsum.photos/seed/frappe-caramelo/400/400"
+      "imageUrl": "/images/frappe-caramelo.jpg"
     },
     {
       "id": "te-helado-limon",
       "description": "Té Helado de Limón",
-      "imageUrl": "https://picsum.photos/seed/te-helado-limon/400/400"
+      "imageUrl": "/images/como-hacer-te-helado-con-limon.jpg"
     },
     {
       "id": "cheesecake-fresa",
       "description": "Cheesecake de Fresa",
-      "imageUrl": "https://picsum.photos/seed/cheesecake-fresa/400/400"
+      "imageUrl": "/images/cheesecake-fresa.jpg"
     },
     {
       "id": "muffin-chocolate",
       "description": "Muffin de Chocolate",
-      "imageUrl": "https://picsum.photos/seed/muffin-chocolate/400/400"
+      "imageUrl": "/images/muffin-de-chocolate.jpg"
     },
     {
       "id": "sandwich-pavo",
       "description": "Sandwich de Pavo",
-      "imageUrl": "https://picsum.photos/seed/sandwich-pavo/400/400"
+      "imageUrl": "/images/sandwich-de-pavo.jpg"
     },
     {
       "id": "papas-fritas-artesanales",
       "description": "Papas Fritas Artesanales",
-      "imageUrl": "https://picsum.photos/seed/papas-fritas-artesanales/400/400"
+      "imageUrl": "/images/papas-fritas-artesanales.jpg"
+    },
+    {
+      "id": "focaccia-italiana",
+      "description": "Focaccia Italiana",
+      "imageUrl": "/images/focaccia-italiana.jpg"
     }
   ]
 }
