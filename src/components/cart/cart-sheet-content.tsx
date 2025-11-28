@@ -9,7 +9,6 @@ import { Trash2 } from "lucide-react";
 import { placeholderImages } from "@/lib/placeholder-images";
 import { QuantitySelector } from "../ui/quantity-selector";
 import { Separator } from "../ui/separator";
-import AiOrderAssistance from "../ai/ai-order-assistance";
 
 export function CartSheetContent() {
   const { cartItems, removeFromCart, updateQuantity, cartTotal, totalItems } = useCart();
@@ -22,7 +21,7 @@ export function CartSheetContent() {
           Agrega productos para verlos aquí.
         </p>
         <Button asChild>
-          <Link href="/">Explorar Menú</Link>
+          <a href="/#menu">Explorar Menú</a>
         </Button>
       </div>
     );
@@ -82,8 +81,6 @@ export function CartSheetContent() {
           })}
         </div>
       </ScrollArea>
-      <Separator className="my-4"/>
-      <AiOrderAssistance />
       <Separator className="my-4"/>
       <div className="mt-auto border-t -mx-6 px-6 pt-6">
         <div className="flex justify-between font-semibold">
