@@ -15,13 +15,25 @@ import { Label } from "@/components/ui/label";
 import { Logo } from "../ui/logo";
 import { useAuth } from "@/hooks/use-auth";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
+import type { User } from "@/lib/types";
 
 export function RegisterForm() {
   const { login } = useAuth();
   const router = useRouter();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
 
   const handleRegister = () => {
-      login();
+      const user: User = {
+          uid: new Date().getTime().toString(),
+          name: name,
+          email: email,
+          phone: phone,
+          role: 'cliente',
+      };
+      login(user);
       router.push('/');
   }
   return (
@@ -36,15 +48,15 @@ export function RegisterForm() {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="name">Nombre completo</Label>
-          <Input id="name" required />
+          <Input id="name" required value={name} onChange={(e) => setName(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="email">Correo electrónico</Label>
-          <Input id="email" type="email" placeholder="tu@email.com" required />
+          <Input id="email" type="email" placeholder="tu@email.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="phone">Número de teléfono</Label>
-          <Input id="phone" type="tel" required />
+          <Input id="phone" type="tel" required value={phone} onChange={(e) => setPhone(e.target.value)} />
         </div>
         <div className="space-y-2">
           <Label htmlFor="password">Contraseña</Label>

@@ -15,15 +15,28 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Logo } from "@/components/ui/logo";
+import { useState } from "react";
+import type { User } from "@/lib/types";
 
 export function LoginForm() {
-    const { login } = useAuth();
-    const router = useRouter();
+  const { login } = useAuth();
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-    const handleLogin = () => {
-        login();
-        router.push('/');
-    }
+  const handleLogin = () => {
+    // In a real app, you'd validate the credentials against a backend.
+    // For this example, we'll create a user object with the entered email.
+    const user: User = {
+        uid: new Date().getTime().toString(), // semi-unique id
+        email: email,
+        name: email.split('@')[0], // Use email prefix as name
+        phone: '', // Add other fields as necessary
+        role: 'cliente',
+    };
+    login(user);
+    router.push('/');
+  }
 
   return (
     <Card className="w-full max-w-md">
@@ -37,7 +50,7 @@ export function LoginForm() {
       <CardContent className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Correo electrónico</Label>
-          <Input id="email" type="email" placeholder="tu@email.com" required />
+          <Input id="email" type="email" placeholder="tu@email.com" required value={email} onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div className="space-y-2">
             <div className="flex items-center justify-between">
@@ -46,7 +59,7 @@ export function LoginForm() {
                     ¿Olvidaste tu contraseña?
                 </Link>
             </div>
-          <Input id="password" type="password" required />
+          <Input id="password" type="password" required value={password} onChange={(e) => setPassword(e.target.value)} />
         </div>
       </CardContent>
       <CardFooter className="flex flex-col gap-4">
