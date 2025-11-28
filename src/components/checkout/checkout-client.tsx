@@ -117,7 +117,7 @@ export default function CheckoutClient() {
              </div>
              <div className="space-y-2">
                 <Label htmlFor="card-name">Nombre del Titular</Label>
-                <Input id="card-name" placeholder="Juan Pérez" required/>
+                <Input id="card-name" defaultValue={user?.name} placeholder="Nombre completo" required/>
              </div>
              <div className="grid grid-cols-2 gap-4">
                 <div className="space-y-2">

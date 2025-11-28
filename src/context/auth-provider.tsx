@@ -3,17 +3,9 @@
 import type { User } from "@/lib/types";
 import React, { createContext, useState, useEffect } from "react";
 
-const mockUser: User = {
-    uid: '123',
-    email: 'user@example.com',
-    name: 'Juan Pérez',
-    phone: '555-1234',
-    role: 'cliente',
-}
-
 interface AuthContextType {
   user: User | null;
-  login: () => void;
+  login: (userData: User) => void;
   logout: () => void;
   isInitializing: boolean;
 }
@@ -29,7 +21,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     setIsInitializing(false);
   }, []);
 
-  const login = () => setUser(mockUser);
+  const login = (userData: User) => setUser(userData);
   const logout = () => setUser(null);
 
   return (

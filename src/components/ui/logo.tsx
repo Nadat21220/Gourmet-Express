@@ -1,20 +1,17 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
-import { CupSoda } from 'lucide-react';
 
-export function Logo({ className }: { className?: string }) {
+type LogoProps = {
+  className?: string;
+  width?: number;
+  height?: number;
+};
+
+export function Logo({ className, width = 100, height = 25 }: LogoProps) {
   return (
-    <Link
-      href="/"
-      className={cn(
-        'flex items-center gap-2 text-lg font-bold font-headline text-foreground',
-        className
-      )}
-    >
-      <div className="p-2 bg-primary text-primary-foreground rounded-lg">
-        <CupSoda className="w-5 h-5" />
-      </div>
-      <span>Gourmet Express</span>
+    <Link href="/" className={cn('flex items-center', className)}>
+      <Image src="/logo/logocafe.png" alt="Gourmet Express" width={width} height={height} />
     </Link>
   );
 }
