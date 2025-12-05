@@ -8,7 +8,7 @@ type LogoProps = {
   height?: number;
 };
 
-export function Logo({ className, width = 100, height = 25 }: LogoProps) {
+export function Logo({ className, width = 48, height = 48 }: LogoProps) {
   return (
     <Link href="/" className={cn('flex items-center', className)}>
       <Image src="/logo/logocafe.png" alt="Gourmet Express" width={width} height={height} />
