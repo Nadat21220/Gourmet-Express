@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-medium">
       <div className="container flex h-16 items-center">
-        <Logo width={100} height={25} />
+        <Logo width={48} height={48} />
         <nav className="hidden md:flex md:ml-6 md:items-center md:gap-5 lg:gap-6">
           {navItems.map((item) => (
             <Link
@@ -40,7 +40,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent side="left">
               <div className="flex flex-col gap-6 p-6">
-                <Logo width={100} height={25} />
+                <Logo width={48} height={48} />
                 <nav className="flex flex-col gap-4">
                   {navItems.map((item) => (
                     <Link

@@ -7,8 +7,8 @@ type LogoProps = {
   width?: number;
   height?: number;
 };
-
-export function Logo({ className, width = 100, height = 25 }: LogoProps) {
+// Este es nuestro logo con los cambios de tamaño.
+export function Logo({ className, width = 48, height = 48 }: LogoProps) {
   return (
     <Link href="/" className={cn('flex items-center', className)}>
       <Image src="/logo/logocafe.png" alt="Gourmet Express" width={width} height={height} />
